@@ -7,7 +7,7 @@ pipeline {
         sh 'java -version'
         sh 'mvn -version'
 
-        def result = input(message: 'input branch name for this job', ok: 'go', parameters: [string(defaultValue: 'master', description: 'branch name', name: 'branch'), string(defaultValue: '', description: 'commit to switch', name: 'commit')])
+        def result = input message: 'input branch name for this job', ok: 'ok', parameters: [string(defaultValue: 'master', description: 'branch name', name: 'branch'), string(defaultValue: '', description: 'commit to switch', name: 'commit')]
 
 	sh "echo ${result.branch}"
 	sh "echo ${result.commit}"
