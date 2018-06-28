@@ -9,9 +9,10 @@ pipeline {
 
        input message: 'input branch name for this job', ok: 'ok', parameters: [string(defaultValue: 'test', description: 'branch name', name: 'branch'), string(defaultValue: '', description: 'commit to switch', name: 'commit')]
 
-      }
-	sh "echo ${env.branch}"
-	sh "echo ${env.commit}"
+	sh 'echo ${env.branch}'
+	sh 'echo ${env.commit}'
+
+	}
     }
 
     stage('build') {
