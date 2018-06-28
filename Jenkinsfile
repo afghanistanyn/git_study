@@ -7,10 +7,7 @@ pipeline {
         sh 'java -version'
         sh 'mvn -version'
         pwd()
-        waitUntil() {
-          input(message: 'are you ready', ok: 'go')
-        }
-
+        input(message: 'To confirm publication', ok: 'GO')
       }
     }
     stage('build') {
